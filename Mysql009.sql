@@ -1,92 +1,37 @@
--- OPERACIONES RELACIONALES = <> < < = > > = 
-/**
-= IGUAL , <> DISTINTO 
-**/
+-- DROP TABLE , WHERE
 
-DROP TABLE IF EXISTS libros;
-
-CREATE TABLE libros(
-titulo VARCHAR(20),
-autor varchar(30),
-editorial varchar(15),
-precio float
+DROP TABLE IF EXISTS usuarios;
+CREATE TABLE usuarios (
+nombre VARCHAR(30),
+clave VARCHAR(10)
 );
 
-INSERT INTO libros 
-(titulo,autor,editorial,precio)
+INSERT INTO usuarios
+(nombre,clave)
 VALUES
-('Discordia','AlexisFawcett','Same',19.90),
-('El aleph','Borges','Planeta',12.50),
-('Martin Fierro','Jose Hernandez','Emece',16.00),
-('Aprenda PHP','Mario Molina','Emece',35.40),
-('Cervantes','Borges','Paidos',50.90);
+('Leonardo','payaso'),
+('MarioPerez','Marito'),
+('Marcelo','River'),
+('Gustavo','River');
 
-SELECT * FROM libros;
+DELETE FROM usuarios
+WHERE nombre = 'Leonardo';
 
-SELECT * FROM libros
-WHERE autor <> 'Borges';
+DELETE FROM usuarios 
+WHERE clave = 'River';
 
-SELECT * FROM libros
-WHERE precio < 20;
+SELECT * FROM USUARIOS;
 
--- PROBLEMA 1 ARTICULOS
+DELETE FROM usuarios;
 
-DROP TABLE IF EXISTS articulos;
-CREATE TABLE IF NOT EXISTS articulos (
-codigo INT,
-nombre VARCHAR(20),
-descripcion VARCHAR(30),
-precio FLOAT,
-cantidad INT
-);
+-- PROBLEMA 1
 
-INSERT INTO articulos
-(codigo,nombre,descripcion,precio,cantidad)
-VALUES
-(001,'Carro','Rojo',100,12),
-(1,'impresora','Epson Stylus C45',400.80,20),
-(2,'impresora','Epson Stylus C85',500,30),
-(3,'monitor','Samsung 14',800,10),
-(4,'teclado','ingles Biswal',100,50),
-(5,'teclado','español Biswal',90,50);
-
-SELECT * FROM articulos;
-
-SELECT * FROM articulos
-WHERE precio >= 500;
-
-SELECT * FROM articulos
-WHERE cantidad <20;
-
-SELECT * FROM articulos
-WHERE precio <>100;
-
--- tabla peliculas
-
-SELECT * FROM peliculas;
-
-SELECT * FROM peliculas
-WHERE duracion <= 90;
-
-SELECT * FROM peliculas
-WHERE actor <> 'Tom Cruise';
-
-SELECT * FROM peliculas
-WHERE cantidad >2;
-
-
--- Tabla Agenda
 SELECT * FROM agenda;
 
-SELECT * FROM agenda
-WHERE domicilio = 'Lopez';
+DELETE FROM agenda
+WHERE  domicilio = 'Lima';
 
-SELECT * FROM agenda
-WHERE nombre <> 'Maria';
+DELETE FROM agenda
+WHERE nombre = 'Juan Torres';
 
-SELECT * FROM agenda
-WHERE domicilio = 'Lima';
-
-SELECT * FROM agenda
-WHERE telefono = '1231313';
-
+DELETE FROM agenda;
