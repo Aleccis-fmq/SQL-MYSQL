@@ -63,4 +63,19 @@ SELECT * FROM libros;
 
 UPDATE libros
 SET precio = 20.10
-WHERE precio = 16;
+WHERE precio = 19.90;
+
+UPDATE libros
+SET precio = 50
+WHERE autor = 'Borges';
+
+-- 3
+SELECT * FROM articulos;
+
+UPDATE articulos 
+SET nombre = 'Pad'
+WHERE precio = 90;
+
+UPDATE articulos
+SET cantidad = 200
+WHERE nombre = 'impresora';
